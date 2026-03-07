@@ -1,0 +1,153 @@
+{
+  "pageMeta": {
+    "home": {
+      "title": "Yalla Moment – Full-Service Digital Marketing Agency",
+      "description": "Yalla Moment is a leading digital marketing agency with 5+ years of experience helping businesses grow online.",
+      "ogTitle": "Yalla Moment | Digital Marketing. Real Results.",
+      "ogDescription": "A full-service digital marketing agency helping you stand out and achieve real business results."
+    }
+  },
+  "nav": {
+    "logo": "Yalla <span>Moment</span>",
+    "home": "Home",
+    "about": "About Us",
+    "portfolio": "Portfolio",
+    "career": "Careers",
+    "contact": "Contact Us",
+    "lang_switch": "AR",
+    "lang_switch_full": "العربية"
+  },
+  "footer": {
+    "tagline": "We craft digital experiences that drive real growth — from strategy to execution.",
+    "contact_title": "Contact Us",
+    "address": "ST 566 Abbas Wafik, Alf Maskan, Cairo",
+    "phone": "+20 115 556 7809",
+    "email": "hello@yallamoment.com",
+    "follow_us": "Follow Us",
+    "copyright": "© 2020 <strong>Yalla Moment</strong>. All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "tag": "Your Digital Growth Partner",
+      "title_l1": "Your Brand",
+      "title_l2": "Deserves",
+      "title_l3": "Real Results.",
+      "sub": "Stop guessing with your marketing. We build a complete step by step system to scale your brand, backed by 5 years of driving growth for market leaders.",
+      "cta_primary": "Start Scaling Today",
+      "cta_secondary": "See Our Process"
+    },
+    "clients": {
+      "eyebrow": "Trusted Partners",
+      "title": "Brands That",
+      "title_accent": "Trust Us",
+      "subtitle": "Top brands trust us to build their digital presence and drive sales."
+    },
+    "about": {
+      "eyebrow": "Our Story",
+      "title": "A Passion for Design,",
+      "title_accent": "5 Years of Digital Growth",
+      "desc_p1": "I am Abdelrahman Amari, an Art Director and Food Photographer. My journey started with a deep, early passion for visual arts and grew into Yalla Moment.",
+      "desc_p2": "Over the past 5 years, we have evolved from designing identities for over 50 restaurants in Egypt to becoming a full-service digital partner. Today, we handle everything from web development to content creation, helping brands succeed.",
+      "badge_number": "+5",
+      "badge_label": "Years Experience",
+      "cta": "Learn More About Us"
+    },
+    "services": {
+      "eyebrow": "The Growth Process",
+      "title": "Everything your brand needs,",
+      "title_accent": "built step-by-step.",
+      "subtitle": "From a blank canvas to a scaling business. You bring the vision, and we execute the entire digital journey to turn strangers into loyal clients.",
+
+      "s1": {
+        "title": "Step 1: Brand Identity Design",
+        "desc": "You cannot scale a brand that does not exist. We start by building your foundation—crafting an unforgettable visual identity that separates you from competitors and builds instant trust.",
+        "tag1": "Color Psychology Analysis",
+        "tag2": "Vector Typography Design",
+        "tag3": "Comprehensive Brand Book"
+      },
+      "s2": {
+        "title": "Step 2: Product Photography",
+        "desc": "Before we build your website, we need assets that sell. We capture your products in their best light using professional studio setups to force immediate buying decisions.",
+        "tag1": "High-Dynamic-Range (HDR) Imaging",
+        "tag2": "Focus Stacking Techniques",
+        "tag3": "Color-Calibrated Retouching"
+      },
+      "s3": {
+        "title": "Step 3: Video Production",
+        "desc": "Next, we bring your brand to life. We produce scroll-stopping Reels, motion graphics, and brand films that tell your story and prove your quality to the market.",
+        "tag1": "4K Cinematic Color Grading",
+        "tag2": "Advanced Motion Tracking",
+        "tag3": "Storyboarding & Scripting"
+      },
+      "s4": {
+        "title": "Step 4: Web Design & Development",
+        "desc": "Now we build your digital home. We take your new brand, photos, and videos, and engineer a fast, conversion-focused website that acts as your 24/7 salesperson.",
+        "tag1": "Core Web Vitals Optimization",
+        "tag2": "Custom CMS Integration",
+        "tag3": "SSL & Security Protocols"
+      },
+      "s5": {
+        "title": "Step 5: SEO & Content Writing",
+        "desc": "With your website live, we ensure people can find it organically. We build technical SEO strategies to dominate Google search results for free, long-term traffic.",
+        "tag1": "Search Intent Analysis",
+        "tag2": "Schema Markup & Rich Snippets",
+        "tag3": "High-Authority Backlink Outreach"
+      },
+      "s6": {
+        "title": "Step 6: Google Ads Campaigns",
+        "desc": "Time to turn on the faucet. We drive immediate, high-intent traffic to your new site, optimizing your budget daily to ensure the lowest cost-per-click and highest ROI.",
+        "tag1": "Conversion Rate Optimization (CRO)",
+        "tag2": "Dynamic Search Campaigns",
+        "tag3": "ROAS (Return on Ad Spend) Tracking"
+      },
+      "s7": {
+        "title": "Step 7: Social Media Management",
+        "desc": "Finally, we turn one-time buyers into a loyal community. We manage your daily presence, spark real engagement, and keep your brand top-of-mind for repeat sales.",
+        "tag1": "A/B Testing & Optimization",
+        "tag2": "Audience Segmentation",
+        "tag3": "KPI & Analytics Tracking"
+      }
+    },
+    "why": {
+      "eyebrow": "Why Choose Us",
+      "title": "5+ Years of Digital Excellence,",
+      "title_accent": "Trusted by Industry Leaders.",
+      "subtitle": "Yalla Moment Agency is a leading digital marketing company delivering integrated solutions since 2020 — helping brands grow, stand out, and dominate their markets.",
+      "stat1": "Years Experience",
+      "stat2": "Happy Clients",
+      "stat3": "Projects Delivered",
+      "stat4": "Reach Generated",
+      "f1": {
+        "title": "Trusted by Top Brands",
+        "desc": "We build digital strategies that actually work for market leaders and growing businesses."
+      },
+      "f2": {
+        "title": "ROI-Focused Execution",
+        "desc": "Every campaign is engineered for maximum return. We don't just create content; we drive measurable sales."
+      },
+      "f3": {
+        "title": "In-House Experts",
+        "desc": "Marketing, design, video, and development are handled entirely by our internal team for perfect consistency."
+      },
+      "f4": {
+        "title": "True Partnership",
+        "desc": "We act as an extension of your company, treating your business goals and budgets as our own."
+      }
+    },
+    "reviews": {
+      "eyebrow": "Client Stories",
+      "title": "Real Results,",
+      "title_accent": "Real Reviews",
+      "subtitle": "Hear directly from our clients about their growth journey with Yalla Moment.",
+      "cta": "View Our Work"
+    }
+  },
+  "cta": {
+    "eyebrow": "Your Next Step",
+    "title": "Ready to scale",
+    "title_accent": "your revenue?",
+    "sub_p1": "Stop losing customers to your competitors.",
+    "sub_p2": "Let's have a straightforward conversation about your business goals and how we can multiply your ROI.",
+    "btn": "Let's Talk Growth"
+  }
+}
