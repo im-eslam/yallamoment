@@ -1,10 +1,26 @@
 'use strict';
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   1. LOADER CONTROLLER
-   Waits for fonts + window load (+ any extra tasks registered via waitFor).
-   Shows a minimum of MIN_DISPLAY_MS ms so the animation isn't a flash.
-───────────────────────────────────────────────────────────────────────────── */
+class SmoothScroll {
+  constructor() {
+    this.lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.2,
+      infinite: false,
+    });
+
+    this._raf = this._raf.bind(this);
+    requestAnimationFrame(this._raf);
+  }
+
+  _raf(time) {
+    this.lenis.raf(time);
+    requestAnimationFrame(this._raf);
+  }
+}
+
 class LoaderController {
   static MIN_DISPLAY_MS = 600;
   static TIMEOUT_MS = 8000;
@@ -14,7 +30,7 @@ class LoaderController {
     this._startTime = Date.now();
     this._extraTasks = [];
     this._tasksDone = 0;
-    this._tasksTotal = 2; // fonts + window load
+    this._tasksTotal = 2;
 
     if (!this.el) return;
 
@@ -24,7 +40,6 @@ class LoaderController {
     window.__loaderController = this;
   }
 
-  /** Register an async task that must finish before the loader hides. */
   waitFor(promise, label = '') {
     if (!this.el) return;
 
@@ -94,10 +109,6 @@ class LoaderController {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   2. NAVBAR CONTROLLER
-   Scroll shadow + mobile overlay + active link detection.
-───────────────────────────────────────────────────────────────────────────── */
 class NavbarController {
   static SCROLL_THRESHOLD = 60;
 
@@ -164,15 +175,6 @@ class NavbarController {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   3. LANGUAGE CONTROLLER
-   Fetches the active language JSON, applies text + HTML + attribute translations,
-   and wires up the language-switch buttons.
-
-   Performance note: attribute translations use .js-lang-attrs — add that class
-   to any element that carries a data-lang-key-attr-* attribute in HTML.
-   This avoids a full querySelectorAll('*') scan on every page load.
-───────────────────────────────────────────────────────────────────────────── */
 class LanguageController {
   constructor() {
     this.currentLang = localStorage.getItem('interactive_lang') || 'en';
@@ -219,19 +221,16 @@ class LanguageController {
   applyTranslations() {
     const resolve = (key) => key.split('.').reduce((obj, k) => obj && obj[k], this.translations);
 
-    // Plain text translations
     document.querySelectorAll('[data-lang-key]').forEach((el) => {
       const val = resolve(el.getAttribute('data-lang-key'));
       if (val) el.textContent = val;
     });
 
-    // Inner HTML translations (for bold/span markup in strings)
     document.querySelectorAll('[data-lang-key-html]').forEach((el) => {
       const val = resolve(el.getAttribute('data-lang-key-html'));
       if (val) el.innerHTML = val;
     });
 
-    // Attribute translations — only scans .js-lang-attrs elements (not the whole DOM)
     document.querySelectorAll('.js-lang-attrs').forEach((el) => {
       [...el.attributes].forEach((attr) => {
         if (!attr.name.startsWith('data-lang-key-attr-')) return;
@@ -258,10 +257,8 @@ class LanguageController {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   INIT
-───────────────────────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
+  new SmoothScroll();
   new LoaderController();
   new NavbarController();
   new LanguageController();

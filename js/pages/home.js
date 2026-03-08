@@ -224,6 +224,7 @@ class NotificationFeedController {
     this._offset = 0;
     this._halfH = 0;
     this._paused = false;
+    this._visible = true;
     this._entered = [];
     this._totalCardsAdded = 0;
     this._duplicateSet = [];
@@ -233,9 +234,9 @@ class NotificationFeedController {
 
     this._buildInitial();
     this._measure();
-    this._bindEvents();
     this._staggerEnter();
     this._waitForLoaderAndProgressive();
+    this._watchVisibility();
   }
 
   _shuffleArray(array) {
@@ -278,40 +279,19 @@ class NotificationFeedController {
   }
 
   _progressivelyAddCards() {
-    const cards = this._shuffledCards;
-    const totalCards = cards.length;
+    const totalCards = this._shuffledCards.length;
 
     const addNextCard = (index) => {
-      if (index >= totalCards) {
-        return;
-      }
+      if (index >= totalCards) return;
 
       const el = this._entered[index];
-      if (el) {
-        setTimeout(() => {
-          el.classList.add('is-visible');
-        }, 80);
-      }
+      if (el) setTimeout(() => el.classList.add('is-visible'), 80);
 
       this._totalCardsAdded++;
-
       setTimeout(() => addNextCard(index + 1), NotificationFeedController.STAGGER);
     };
 
     addNextCard(NotificationFeedController.INITIAL_CARDS);
-  }
-
-  _rebuildDuplicateSet() {
-    const cards = this._shuffledCards;
-
-    this._duplicateSet.forEach((el) => el.remove());
-    this._duplicateSet = [];
-
-    cards.forEach((data) => {
-      const el = this._makeCard(data, true);
-      this.track.appendChild(el);
-      this._duplicateSet.push(el);
-    });
   }
 
   _makeCard(data, preVisible) {
@@ -347,9 +327,7 @@ class NotificationFeedController {
       let h = 0;
       const children = this.track.children;
       for (let i = 0; i < count; i++) {
-        if (children[i]) {
-          h += children[i].offsetHeight + gap;
-        }
+        if (children[i]) h += children[i].offsetHeight + gap;
       }
       this._halfH = h;
 
@@ -361,29 +339,44 @@ class NotificationFeedController {
   }
 
   _staggerEnter() {
-    this._entered.forEach((el, i) => {
-      setTimeout(
-        () => {
-          el.classList.add('is-visible');
-        },
-        80 + i * NotificationFeedController.STAGGER,
-      );
+    this._entered.slice(0, NotificationFeedController.INITIAL_CARDS).forEach((el, i) => {
+      setTimeout(() => el.classList.add('is-visible'), 80 + i * NotificationFeedController.STAGGER);
     });
   }
 
   _scroll() {
+    this._rafId = null;
+
     const tick = () => {
       if (!this._paused && this._halfH > 0) {
         this._offset += NotificationFeedController.SPEED;
         if (this._offset >= this._halfH) this._offset -= this._halfH;
         this.track.style.transform = `translateY(-${this._offset}px)`;
       }
-      requestAnimationFrame(tick);
+      this._rafId = requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+
+    this._rafId = requestAnimationFrame(tick);
   }
 
-  _bindEvents() {}
+  _watchVisibility() {
+    const stop = () => {
+      if (this._rafId !== null) {
+        cancelAnimationFrame(this._rafId);
+        this._rafId = null;
+      }
+    };
+
+    const start = () => {
+      if (this._rafId === null) this._scroll();
+    };
+
+    new IntersectionObserver(([entry]) => (entry.isIntersecting ? start() : stop()), { threshold: 0 }).observe(this.feedArea);
+
+    document.addEventListener('visibilitychange', () => {
+      document.hidden ? stop() : start();
+    });
+  }
 }
 
 class ServicesController {
@@ -534,6 +527,8 @@ class ServicesController {
   }
 
   _observeItems() {
+    const isMobile = window.innerWidth <= 820;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -545,7 +540,10 @@ class ServicesController {
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -80px 0px' },
+      {
+        threshold: isMobile ? 0.08 : 0.35,
+        rootMargin: isMobile ? '0px 0px -40px 0px' : '0px 0px -120px 0px',
+      },
     );
 
     this.items.forEach((item) => observer.observe(item));
@@ -626,9 +624,10 @@ class WhyController {
   _observeElements() {
     const statsObserver = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          setTimeout(() => entry.target.classList.add('is-visible'), index * 100);
+          const idx = this.stats.indexOf(entry.target);
+          setTimeout(() => entry.target.classList.add('is-visible'), idx * 100);
           if (!this._hasCountedUp) {
             this._hasCountedUp = true;
             setTimeout(() => this._countUp(), 200);
@@ -694,42 +693,6 @@ class ReviewsController {
     this._bindVideoControls();
     this._initVisibilityObserver();
     this._preloadAdjacentSlides();
-
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(() => this._initThumbnails(), { timeout: 3000 });
-    } else {
-      setTimeout(() => this._initThumbnails(), 1200);
-    }
-  }
-
-  _initThumbnails() {
-    this.container.querySelectorAll('.review-video').forEach((video) => {
-      const existing = video.getAttribute('poster') || '';
-      if (existing && !existing.startsWith('data:image/svg')) return;
-
-      const capture = () => {
-        if (!video.videoWidth) return;
-        try {
-          const scale = Math.min(1, 540 / video.videoWidth);
-          const w = Math.round(video.videoWidth * scale);
-          const h = Math.round(video.videoHeight * scale);
-          const canvas = document.createElement('canvas');
-          canvas.width = w;
-          canvas.height = h;
-          canvas.getContext('2d').drawImage(video, 0, 0, w, h);
-          const dataUrl = canvas.toDataURL('image/jpeg', 0.82);
-          if (dataUrl?.startsWith('data:image/jpeg')) video.setAttribute('poster', dataUrl);
-        } catch (_) {
-        }
-      };
-
-      const doSeek = () => {
-        video.addEventListener('seeked', capture, { once: true });
-        video.currentTime = 0.001;
-      };
-
-      video.readyState >= 1 ? doSeek() : video.addEventListener('loadedmetadata', doSeek, { once: true });
-    });
   }
 
   _initSwiper() {
@@ -886,11 +849,11 @@ class ReviewsController {
 
 class RevealController {
   constructor() {
-    this._observe('.cta-section', 0.15);
-    this._observe('.about', 0.2);
+    this._observe('.cta-section');
+    this._observe('.about');
   }
 
-  _observe(selector, threshold) {
+  _observe(selector) {
     const el = document.querySelector(selector);
     if (!el) return;
 
@@ -898,14 +861,14 @@ class RevealController {
       ([entry]) => {
         if (entry.isIntersecting) entry.target.classList.add('in-view');
       },
-      { threshold },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px',
+      },
     ).observe(el);
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────────
-   INIT
-───────────────────────────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   new NotificationFeedController();
   new ServicesController();
