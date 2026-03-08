@@ -5,6 +5,18 @@
       "description": "Yalla Moment is a leading digital marketing agency with 5+ years of experience helping businesses grow online.",
       "ogTitle": "Yalla Moment | Digital Marketing. Real Results.",
       "ogDescription": "A full-service digital marketing agency helping you stand out and achieve real business results."
+    },
+    "about": {
+      "title": "About Us | Yalla Moment",
+      "description": "Learn about Yalla Moment — a Cairo-based digital marketing agency founded by Abdelrahman Amari. Our story, vision, and the team behind your brand's growth.",
+      "ogTitle": "About Yalla Moment | Digital Marketing Agency",
+      "ogDescription": "5+ years building brands in Egypt. Discover our story, mission, and the creative mind behind Yalla Moment."
+    },
+    "portfolio": {
+      "title": "Our Work & Case Studies | Yalla Moment",
+      "description": "Proof that our systems work. Explore case studies of 50+ businesses and restaurants in Egypt that scaled their revenue with Yalla Moment.",
+      "ogTitle": "Case Studies | Yalla Moment's Proven Work",
+      "ogDescription": "See how we turn high-end design, photography, and digital marketing into actual market authority."
     }
   },
   "nav": {
@@ -140,6 +152,80 @@
       "title_accent": "Real Reviews",
       "subtitle": "Hear directly from our clients about their growth journey with Yalla Moment.",
       "cta": "View Our Work"
+    }
+  },
+  "about": {
+    "hero": {
+      "prefix": "We ",
+      "wrong": "market for",
+      "right": "BUILD",
+      "suffix": " big names.",
+      "scroll": "Scroll"
+    },
+    "story": {
+      "founder": {
+        "label": "The Founder",
+        "title": "From a blank canvas",
+        "title_accent": "to 50+ brands scaled.",
+        "p1": "I'm Abdelrahman Amari — Art Director, food photographer, and founder of Yalla Moment. I mastered design and marketing for one specific reason: to turn high-end aesthetics into actual business growth.",
+        "p2": "Having partnered with over 50 businesses in Egypt, I built this agency to fix a broken market. We don't just make things look good — we make them sell.",
+        "quote": "\"Design without strategy is just art. We build systems that make you the authority in your market\""
+      },
+      "team": {
+        "label": "The Agency",
+        "title": "One unified company,",
+        "title_accent": "obsessed with your ROI.",
+        "p1": "Yalla Moment operates as a direct extension of your business. We align every design, line of code, and ad campaign exclusively with your revenue goals.",
+        "p2": "You don't have to manage scattered freelancers. You get a complete, in-house marketing powerhouse dedicated to capturing your market and multiplying your sales."
+      }
+    },
+    "pillars": {
+      "eyebrow": "What Drives Us",
+      "title": "Purpose. Direction.",
+      "title_accent": "Results.",
+      "subtitle": "Three pillars that shape every decision we make and every campaign we run.",
+      "mission": {
+        "title": "Our Mission",
+        "desc": "To deliver innovative digital marketing, visual identity design, and professional photography that empowers brands to build a powerful digital presence and achieve real, sustainable growth."
+      },
+      "vision": {
+        "title": "Our Vision",
+        "desc": "To become the leading creative partner for businesses that want to dominate their markets — through bold strategies, unforgettable design, and a relentless focus on measurable outcomes."
+      },
+      "why": {
+        "title": "Why Yalla Moment",
+        "desc": "We believe in creativity, professionalism, and ongoing communication. Unlike agencies that treat you as a client number, we become an extension of your team — invested in your success the same way you are."
+      }
+    },
+    "stats": {
+      "eyebrow": "By the Numbers",
+      "title": "Real work.",
+      "title_accent": "Real numbers.",
+      "sub": "Five years of building brands, running campaigns, and delivering results that actually move the needle.",
+      "s1": "Years Experience",
+      "s2": "Happy Clients",
+      "s3": "Projects Delivered",
+      "s4": "Reach Generated"
+    }
+  },
+  "portfolio": {
+    "hero": {
+      "prefix": "Engineered for ",
+      "wrong": "likes",
+      "right": "REVENUE",
+      "suffix": ".",
+      "scroll": "Scroll"
+    },
+    "gd": {
+      "eyebrow": "01 — Graphic Design",
+      "title": "Visual<br /><span>Authority.</span>",
+      "desc": "We don't design for likes. We build premium brand identities that command higher prices and dominate the market.",
+      "hint": "Swipe to browse"
+    },
+    "video": {
+      "eyebrow": "02 — Video Production",
+      "title": "Scroll-Stopping<br /><span>Motion.</span>",
+      "desc": "Attention is the most expensive currency in business. We produce high-retention video assets engineered to stop the scroll and drive conversions."
     }
   },
   "cta": {

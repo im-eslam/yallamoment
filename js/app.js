@@ -257,9 +257,72 @@ class LanguageController {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  new SmoothScroll();
-  new LoaderController();
-  new NavbarController();
-  new LanguageController();
-});
+class RevealController {
+  constructor() {
+    this._observe('.cta-section');
+    this._observe('.about');
+  }
+
+  _observe(selector) {
+    const el = document.querySelector(selector);
+    if (!el) return;
+
+    new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) entry.target.classList.add('in-view');
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -80px 0px',
+      },
+    ).observe(el);
+  }
+}
+
+window.onLoaderReady = (function () {
+  let ready = false;
+  let callbacks = [];
+  function runCallbacks() {
+    ready = true;
+    callbacks.forEach((cb) => {
+      try {
+        cb();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+    callbacks = [];
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    new SmoothScroll();
+    new LoaderController();
+    new NavbarController();
+    new LanguageController();
+    new RevealController();
+
+    const loader = document.getElementById('page-loader');
+    if (!loader) {
+      runCallbacks();
+      return;
+    }
+    const check = () => {
+      if (!document.body.contains(loader) || loader.classList.contains('loaded')) {
+        runCallbacks();
+      } else {
+        requestAnimationFrame(check);
+      }
+    };
+    check();
+  });
+  return function (cb) {
+    if (ready) {
+      try {
+        cb();
+      } catch (e) {
+        console.error(e);
+      }
+    } else {
+      callbacks.push(cb);
+    }
+  };
+})();

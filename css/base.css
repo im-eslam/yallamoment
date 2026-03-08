@@ -1192,3 +1192,38 @@ section[id] {
     transform: rotate(360deg);
   }
 }
+
+/* 
+─────────────────────────────────────────────────────────────────────────────
+7. |SCROLLBAR
+───────────────────────────────────────────────────────────────────────────────
+*/
+
+/* Chromium + Safari */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--c-brand-light) 0%, var(--c-brand) 50%, #5a2320 100%);
+  border-radius: var(--radius-pill);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #d4706a 0%, var(--c-brand-light) 50%, var(--c-brand) 100%);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-brand) transparent;
+}

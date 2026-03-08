@@ -847,32 +847,9 @@ class ReviewsController {
   }
 }
 
-class RevealController {
-  constructor() {
-    this._observe('.cta-section');
-    this._observe('.about');
-  }
-
-  _observe(selector) {
-    const el = document.querySelector(selector);
-    if (!el) return;
-
-    new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
-      },
-      {
-        threshold: 0.15,
-        rootMargin: '0px 0px -80px 0px',
-      },
-    ).observe(el);
-  }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
+window.onLoaderReady(() => {
   new NotificationFeedController();
   new ServicesController();
   new WhyController();
   new ReviewsController();
-  new RevealController();
 });
