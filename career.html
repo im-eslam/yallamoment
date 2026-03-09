@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Basic -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-lang-key="pageMeta.career.title">Careers | Join Yalla Moment</title>
+
+    <!-- Meta -->
+    <meta
+      name="description"
+      content="We are looking for top-tier designers, marketers, and developers. If you have 2+ years of experience and a killer portfolio, apply to join our in-house team."
+      data-lang-key-attr-content="pageMeta.career.description"
+    />
+    <meta name="author" content="Yalla Moment Agency" />
+    <link rel="canonical" href="https://www.yallamoment.com/career.html" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Lang alternates -->
+    <link rel="alternate" hreflang="en" href="https://www.yallamoment.com/career.html?lang=en" />
+    <link rel="alternate" hreflang="ar" href="https://www.yallamoment.com/career.html?lang=ar" />
+    <link rel="alternate" hreflang="x-default" href="https://www.yallamoment.com/career.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo/fav.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="assets/images/logo/apple_icon.png" />
+
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.yallamoment.com/career.html" />
+    <meta property="og:title" content="Careers at Yalla Moment | Build Market Leaders" data-lang-key-attr-content="pageMeta.career.ogTitle" />
+    <meta property="og:description" content="Ready to do the best work of your career? We are hiring proven talent to help us scale businesses across Egypt." data-lang-key-attr-content="pageMeta.career.ogDescription" />
+    <meta property="og:image" content="https://www.yallamoment.com/assets/images/logo/apple_icon.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Careers at Yalla Moment" data-lang-key-attr-content="pageMeta.career.ogTitle" />
+    <meta name="twitter:description" content="Ready to do the best work of your career?" data-lang-key-attr-content="pageMeta.career.ogDescription" />
+    <meta name="twitter:image" content="https://www.yallamoment.com/assets/images/logo/apple_icon.png" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media = 'all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Font Awesome -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" /></noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Yalla Moment",
+          "url": "https://www.yallamoment.com"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Abdelsalam Amin St, 6th of October City",
+            "addressLocality": "Cairo",
+            "addressCountry": "EG"
+          }
+        }
+      }
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/forms.css" />
+
+    <!-- Career-page extras -->
+    <style>
+      body[data-page='career'] .contact-info__heading {
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .form-file-wrap {
+        position: relative;
+      }
+
+      .form-file-trigger {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        padding: 11px 14px;
+        background: var(--c-bg-alt);
+        border: 1.5px dashed rgba(130, 53, 48, 0.3);
+        border-radius: 10px;
+        cursor: pointer;
+        transition:
+          border-color 0.2s var(--ease),
+          background 0.2s var(--ease);
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.9375rem;
+        color: var(--c-text-2);
+        user-select: none;
+      }
+
+      .form-file-trigger:hover {
+        border-color: var(--c-brand);
+        background: #fff;
+      }
+
+      .form-file-trigger.has-file {
+        border-style: solid;
+        border-color: rgba(130, 53, 48, 0.35);
+        background: #fff;
+        color: var(--c-text);
+      }
+
+      .form-file-trigger i {
+        color: var(--c-brand);
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .form-file-name {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .form-file-btn {
+        font-family: 'Cairo', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 700;
+        color: var(--c-brand);
+        background: var(--c-brand-tint);
+        border-radius: 50px;
+        padding: 4px 12px;
+        flex-shrink: 0;
+        white-space: nowrap;
+        pointer-events: none;
+      }
+
+      /* The real file input — invisible, covers the trigger */
+      .form-file-input {
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .form-file-hint {
+        display: block;
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.75rem;
+        color: var(--c-text-2);
+        opacity: 0.65;
+        margin-top: 5px;
+      }
+
+      .form-field.has-error .form-file-trigger {
+        border-color: #d84040;
+        background: #fff7f7;
+      }
+
+      /* ─── Agreement checkbox ─── */
+      .form-agreement {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px;
+        background: var(--c-brand-tint);
+        border-radius: 10px;
+        border: 1px solid rgba(130, 53, 48, 0.12);
+        cursor: pointer;
+        transition: border-color 0.2s var(--ease);
+      }
+
+      .form-agreement__checkbox {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        margin-top: 2px;
+        accent-color: var(--c-brand);
+        cursor: pointer;
+      }
+
+      .form-agreement__text {
+        font-family: 'Tajawal', sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.65;
+        color: var(--c-text-2);
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .form-field.has-error .form-agreement {
+        border-color: #d84040;
+        background: #fff7f7;
+      }
+
+      /* ─── RTL overrides for career additions ─── */
+      [dir='rtl'] .form-file-trigger {
+        flex-direction: row-reverse;
+      }
+
+      [dir='rtl'] .form-agreement {
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+    </style>
+  </head>
+
+  <body data-page="career">
+    <!-- ==== LOADER ==== -->
+    <div id="page-loader" role="status" aria-label="Page is loading">
+      <div class="loader-logo-wrap">
+        <img src="assets/images/logo/logo_1.png" alt="" width="64" height="83" aria-hidden="true" fetchpriority="high" />
+        <span class="loader-logo-ring" aria-hidden="true"></span>
+      </div>
+    </div>
+    <!-- /LOADER -->
+
+    <!-- ==== NAVBAR ==== -->
+    <nav class="site-nav" aria-label="Main Navigation">
+      <div class="nav-inner">
+        <!-- Brand -->
+        <a href="index.html" class="nav-logo" aria-label="YallaMoment — Home">
+          <img src="assets/images/logo/logo_1.png" alt="Yalla Moment Logo" class="nav-logo-img" width="50" height="65" loading="eager" decoding="async" />
+          <span class="nav-logo-text" data-lang-key-html="nav.logo">Yalla <span>Moment</span></span>
+        </a>
+
+        <!-- Links -->
+        <ul class="nav-links" role="list">
+          <li><a href="index.html" data-page="home" data-lang-key="nav.home">Home</a></li>
+          <li><a href="about.html" data-page="about" data-lang-key="nav.about">About Us</a></li>
+          <li><a href="portfolio.html" data-page="portfolio" data-lang-key="nav.portfolio">Portfolio</a></li>
+          <li><a href="career.html" data-page="career" data-lang-key="nav.career">Careers</a></li>
+        </ul>
+
+        <!-- Actions -->
+        <div class="nav-actions">
+          <button id="lang-toggle-btn" class="lang-switch" aria-label="Switch language">EN</button>
+          <a href="contact.html" class="btn-primary nav-cta" data-lang-key="nav.contact">Contact Us</a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="nav-hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+    <!-- /NAVBAR -->
+
+    <!-- ==== MOBILE MENU ==== -->
+    <div class="nav-mobile-overlay" id="mobile-menu" aria-label="Navigation Menu" aria-modal="true" role="dialog">
+      <ul class="mobile-nav-links" role="list">
+        <li><a href="index.html" data-page="home" data-lang-key="nav.home">Home</a></li>
+        <li><a href="about.html" data-page="about" data-lang-key="nav.about">About Us</a></li>
+        <li><a href="portfolio.html" data-page="portfolio" data-lang-key="nav.portfolio">Portfolio</a></li>
+        <li><a href="career.html" data-page="career" data-lang-key="nav.career">Careers</a></li>
+      </ul>
+
+      <div class="mobile-cta">
+        <a href="contact.html" class="btn-primary btn-lg" data-lang-key="nav.contact">Contact Us</a>
+      </div>
+
+      <button id="lang-toggle-btn-mobile" class="lang-switch-mobile" aria-label="Switch language">English</button>
+
+      <div class="mobile-social-links">
+        <a href="https://www.facebook.com/yallamomentag" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M18 2h-3a6 6 0 0 0-6 6v4h-2v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h1z" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/yallamomentag/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+            <circle cx="17.5" cy="6.5" r="1.5" />
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@yallamomentag?lang=en" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-link">
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="https://wa.me/201070002611" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-link">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    <!-- /MOBILE MENU -->
+
+    <main>
+      <!-- ==== HERO ==== -->
+      <section class="contact-hero" aria-labelledby="career-hero-title">
+        <div class="contact-hero__inner">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow__dot" aria-hidden="true"></span>
+            <span data-lang-key="career.hero.eyebrow">Careers</span>
+          </div>
+
+          <h1 id="career-hero-title" class="contact-hero__title">
+            <span data-lang-key="career.hero.title">Do the best work of</span>
+            <span class="contact-hero__accent" data-lang-key="career.hero.title_accent">your life.</span>
+          </h1>
+
+          <p class="contact-hero__subtitle" data-lang-key="career.hero.subtitle">
+            We are an elite, in-house team. We do not hire beginners, and we do not micro-manage. We are looking for proven professionals who care deeply about their craft and want to build systems that scale businesses.
+          </p>
+        </div>
+      </section>
+      <!-- /HERO -->
+
+      <!-- ==== BODY ==== -->
+      <section class="contact-body" aria-label="Career Application">
+        <div class="contact-layout">
+          <!-- ── SIDEBAR ── -->
+          <aside class="contact-info" aria-label="Hiring information">
+            <div class="contact-info__card">
+              <h2 class="contact-info__heading" data-lang-key="career.info.warning_title">Strict Hiring Policy</h2>
+
+              <!-- Office location -->
+              <div class="contact-info__item">
+                <span class="contact-info__icon" aria-hidden="true">
+                  <i class="fas fa-location-dot"></i>
+                </span>
+                <div class="contact-info__text">
+                  <span class="contact-info__label" data-lang-key="career.info.address_label">Office Location</span>
+                  <span class="contact-info__value" data-lang-key="career.info.address_val">Abdelsalam Amin St., 6th of October City, Giza</span>
+                </div>
+              </div>
+
+              <!-- Requirements -->
+              <div class="contact-info__item">
+                <span class="contact-info__icon" aria-hidden="true">
+                  <i class="fas fa-user-check"></i>
+                </span>
+                <div class="contact-info__text">
+                  <span class="contact-info__label" data-lang-key="career.info.requirements_label">Requirements</span>
+                  <span class="contact-info__value" data-lang-key="career.info.requirements_val">20+ years old &amp; 2+ years professional experience</span>
+                </div>
+              </div>
+
+              <!-- Portfolio required -->
+              <div class="contact-info__item">
+                <span class="contact-info__icon" aria-hidden="true">
+                  <i class="fas fa-briefcase"></i>
+                </span>
+                <div class="contact-info__text">
+                  <span class="contact-info__label" data-lang-key="career.info.portfolio_label">Portfolio</span>
+                  <span class="contact-info__value" data-lang-key="career.info.portfolio_val">Required — applications without one are auto-rejected</span>
+                </div>
+              </div>
+
+              <!-- Warning note -->
+              <div class="contact-info__note" aria-live="polite">
+                <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+                <span data-lang-key="career.info.warning_desc">Please respect our time. Do not apply if you do not meet the minimum age (20+) and experience (2+ years) requirements.</span>
+              </div>
+
+              <!-- Review time note -->
+              <div class="contact-info__note" style="margin-top: 12px">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <span data-lang-key-html="career.info.review_note">Applications reviewed within <strong>3 business days</strong></span>
+              </div>
+            </div>
+          </aside>
+          <!-- /SIDEBAR -->
+
+          <!-- ── FORM ── -->
+          <div class="contact-form-wrap">
+            <form id="career-form" class="contact-form" novalidate aria-label="Career Application Form">
+              <!-- Row 1: Name + Email -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-label" for="cf-name">
+                    <span data-lang-key="career.form.labels.name">Full Name</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="cf-name"
+                    name="name"
+                    class="form-input js-lang-attrs"
+                    autocomplete="name"
+                    required
+                    data-lang-key-attr-placeholder="career.form.placeholders.name"
+                    placeholder="e.g. Ahmed Khaled"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="cf-email">
+                    <span data-lang-key="career.form.labels.email">Email Address</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="cf-email"
+                    name="email"
+                    class="form-input js-lang-attrs"
+                    autocomplete="email"
+                    required
+                    data-lang-key-attr-placeholder="career.form.placeholders.email"
+                    placeholder="ahmed@gmail.com"
+                  />
+                </div>
+              </div>
+
+              <!-- Row 2: Phone + Job Title -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label class="form-label" for="cf-phone">
+                    <span data-lang-key="career.form.labels.phone">Phone / WhatsApp Number</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="cf-phone"
+                    name="phone"
+                    class="form-input js-lang-attrs"
+                    autocomplete="tel"
+                    required
+                    data-lang-key-attr-placeholder="career.form.placeholders.phone"
+                    placeholder="+20 10X XXX XXXX"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label class="form-label" for="cf-job-title">
+                    <span data-lang-key="career.form.labels.job_title">What role are you applying for?</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="cf-job-title"
+                    name="job_title"
+                    class="form-input js-lang-attrs"
+                    required
+                    data-lang-key-attr-placeholder="career.form.placeholders.job_title"
+                    placeholder="e.g. Senior Media Buyer, UI/UX Designer..."
+                  />
+                </div>
+              </div>
+
+              <!-- Row 3: Portfolio link -->
+              <div class="form-row form-row--full">
+                <div class="form-field">
+                  <label class="form-label" for="cf-portfolio">
+                    <span data-lang-key="career.form.labels.portfolio">Portfolio or GitHub Link (Crucial)</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="url"
+                    id="cf-portfolio"
+                    name="portfolio"
+                    class="form-input js-lang-attrs"
+                    required
+                    data-lang-key-attr-placeholder="career.form.placeholders.portfolio"
+                    placeholder="behance.net/yourname or yourwebsite.com"
+                  />
+                </div>
+              </div>
+
+              <!-- Row 4: CV File Upload -->
+              <!-- <div class="form-row form-row--full">
+                <div class="form-field" id="cv-field">
+                  <label class="form-label">
+                    <span data-lang-key="career.form.labels.cv">Upload your CV (PDF only)</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <div class="form-file-wrap">
+                    <label class="form-file-trigger" id="cv-file-label" for="cf-cv">
+                      <i class="fas fa-file-arrow-up" aria-hidden="true"></i>
+                      <span class="form-file-name" id="cv-file-name" data-lang-key="career.form.upload_btn">Choose File</span>
+                      <span class="form-file-btn" aria-hidden="true" data-lang-key="career.form.upload_browse">Browse</span>
+                    </label>
+                    <input type="file" id="cf-cv" name="cv" class="form-file-input" accept=".pdf,application/pdf" aria-label="Upload CV PDF" />
+                  </div>
+                  <span class="form-file-hint" data-lang-key="career.form.upload_hint">Max file size: 5MB — PDF only</span>
+                </div>
+              </div> -->
+
+              <!-- Row 5: Why Yalla Moment -->
+              <div class="form-row form-row--full">
+                <div class="form-field">
+                  <label class="form-label" for="cf-why-us">
+                    <span data-lang-key="career.form.labels.why_us">Why Yalla Moment? (Briefly)</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="cf-why-us"
+                    name="why_us"
+                    class="form-textarea js-lang-attrs"
+                    rows="4"
+                    required
+                    data-lang-key-attr-placeholder="career.form.placeholders.why_us"
+                    placeholder="Tell us what you can bring to the team..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Agreement checkbox -->
+              <div class="form-field" id="agreement-field">
+                <label class="form-agreement" for="cf-agreement">
+                  <input type="checkbox" id="cf-agreement" name="agreement" class="form-agreement__checkbox" required aria-required="true" />
+                  <span class="form-agreement__text" data-lang-key="career.form.labels.agreement">
+                    I confirm that I am at least 20 years old and have a minimum of 2 years of professional agency/freelance experience.
+                  </span>
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-submit-row">
+                <button type="submit" class="btn-primary btn-lg contact-submit-btn" id="career-submit">
+                  <span class="btn-text" data-lang-key="career.form.submit">Submit Application</span>
+                  <span class="btn-spinner" aria-hidden="true"></span>
+                </button>
+                <p class="form-privacy-note">
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <span data-lang-key="career.form.privacy_note">Your information is 100% confidential and will never be shared.</span>
+                </p>
+              </div>
+            </form>
+          </div>
+          <!-- /FORM -->
+        </div>
+      </section>
+      <!-- /BODY -->
+    </main>
+
+    <!-- ==== WHATSAPP ==== -->
+    <a
+      href="https://wa.me/201070002611"
+      class="whatsapp-btn js-lang-attrs"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Whatsapp Contact"
+      data-tooltip="Whatsapp Contact"
+      data-lang-key-attr-data-tooltip="whatsapp.tooltip"
+      data-lang-key-attr-aria-label="whatsapp.tooltip"
+    >
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+    <!-- /WHATSAPP -->
+
+    <!-- ==== FOOTER ==== -->
+    <footer class="site-footer" aria-label="Site Footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo" aria-label="Yalla Moment — Home">
+              <img src="assets/images/logo/logo_1.png" alt="Yalla Moment Logo" class="footer-logo-img" width="36" height="47" loading="lazy" decoding="async" />
+              <span class="footer-logo-text" data-lang-key-html="nav.logo">Yalla <span>Moment</span></span>
+            </a>
+            <p class="footer-tagline" data-lang-key="footer.tagline">We craft digital experiences that drive real growth — from strategy to execution.</p>
+          </div>
+
+          <div class="footer-contact">
+            <h3 class="footer-contact__title" data-lang-key="footer.contact_title">Contact Us</h3>
+            <ul class="footer-contact__list">
+              <li>
+                <i class="fas fa-location-dot" aria-hidden="true"></i>
+                <a href="https://maps.app.goo.gl/8CJcfKgpX8obJbkm8?g_st=iw" target="_blank" rel="noopener noreferrer" aria-label="Google Maps Location">
+                  <span data-lang-key="footer.address">Abdelsalam Amin St., 6th of October City, Giza Governorate, Egypt</span>
+                </a>
+              </li>
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <a href="tel:+201070002611" dir="ltr" data-lang-key="footer.phone">+20 107 000 2611</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:yallamoment.eg@gmail.com" data-lang-key="footer.email">yallamoment.eg@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-social-wrap">
+            <h3 class="footer-social__title" data-lang-key="footer.follow_us">Follow Us</h3>
+            <div class="footer-social" role="list" aria-label="Social Media Links">
+              <a href="https://www.facebook.com/yallamomentag" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="footer-social-link" role="listitem">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 2h-3a6 6 0 0 0-6 6v4h-2v4h2v8h4v-8h3l1-4h-4V8a2 2 0 0 1 2-2h1z" />
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/yallamomentag/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="footer-social-link" role="listitem">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <circle cx="17.5" cy="6.5" r="1.5" />
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@yallamomentag?lang=en" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="footer-social-link" role="listitem">
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
+              </a>
+              <a href="https://wa.me/201070002611" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="footer-social-link" role="listitem">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-divider" aria-hidden="true"></div>
+
+        <p class="footer-copyright" data-lang-key-html="footer.copyright">&copy; 2020 <strong>Yalla Moment</strong>. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- /FOOTER -->
+
+    <!-- ==== SCRIPTS ==== -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/pages/forms.js" defer></script>
+    <!-- /SCRIPTS -->
+  </body>
+</html>

@@ -731,6 +731,7 @@ class ReviewsController {
       if (!video || !playBtn) return;
 
       card.addEventListener('click', (e) => {
+        if (!this.swiper.allowClick) return;
         if (e.target.closest('.review-mute-btn')) return;
 
         const slide = card.closest('.swiper-slide');

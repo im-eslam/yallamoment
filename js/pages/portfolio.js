@@ -393,7 +393,7 @@ class CardDeck {
 
 class PortfolioVideoController {
   constructor() {
-    this.container = document.querySelector('.pf-vid-swiper');
+    this.container = document.querySelector('.pf-video-swiper');
     if (!this.container) return;
 
     this._playing = null;
@@ -405,14 +405,15 @@ class PortfolioVideoController {
 
   _init() {
     this._initSwiper();
-    this._bindControls();
+    this._bindVideoControls();
     this._initVisibilityObserver();
-    this._preloadAdjacent();
+    this._preloadAdjacentSlides();
   }
 
   _initSwiper() {
     const isRTL = document.documentElement.dir === 'rtl';
-    this.swiper = new Swiper('.pf-vid-swiper', {
+
+    this.swiper = new Swiper('.pf-video-swiper', {
       slidesPerView: 'auto',
       centeredSlides: true,
       rewind: true,
@@ -423,29 +424,30 @@ class PortfolioVideoController {
       breakpoints: {
         0: { spaceBetween: 12 },
         600: { spaceBetween: 16 },
-        900: { spaceBetween: 24 },
+        900: { spaceBetween: 20 },
       },
-      pagination: { el: '.pf-vid-pagination', clickable: true },
-      navigation: { nextEl: '.pf-vid-next', prevEl: '.pf-vid-prev' },
+      pagination: { el: '.pf-video-pagination', clickable: true },
+      navigation: { nextEl: '.pf-video-next', prevEl: '.pf-video-prev' },
       on: {
         slideChange: () => {
           this._stopPlaying();
-          this._preloadAdjacent();
+          this._preloadAdjacentSlides();
         },
       },
     });
   }
 
-  _bindControls() {
-    this.container.querySelectorAll('.pf-vid-card').forEach((card) => {
-      const video = card.querySelector('.pf-vid-el');
-      const playBtn = card.querySelector('.pf-vid-play-btn');
-      const muteBtn = card.querySelector('.pf-vid-mute-btn');
-      const progress = card.querySelector('.pf-vid-progress');
+  _bindVideoControls() {
+    this.container.querySelectorAll('.pf-video-card').forEach((card) => {
+      const video = card.querySelector('.pf-video-el');
+      const playBtn = card.querySelector('.pf-video-play-btn');
+      const muteBtn = card.querySelector('.pf-video-mute-btn');
+      const progress = card.querySelector('.pf-video-progress');
       if (!video || !playBtn) return;
 
       card.addEventListener('click', (e) => {
-        if (e.target.closest('.pf-vid-mute-btn')) return;
+        if (!this.swiper.allowClick) return;
+        if (e.target.closest('.pf-video-mute-btn')) return;
 
         const slide = card.closest('.swiper-slide');
         const isActive = slide?.classList.contains('swiper-slide-active');
@@ -465,13 +467,14 @@ class PortfolioVideoController {
       });
 
       video.addEventListener('ended', () => {
-        this._resetCard({ video, playBtn, muteBtn, progress });
+        this._resetCard({ video, card, playBtn, muteBtn, progress });
       });
     });
   }
 
   _play({ video, card, playBtn, muteBtn, progress }) {
     if (this._playing && this._playing.video !== video) this._stopPlaying();
+
     if (video.preload === 'none') video.preload = 'metadata';
 
     video.muted = false;
@@ -513,7 +516,9 @@ class PortfolioVideoController {
   _startProgress(video, bar) {
     this._stopProgress();
     const tick = () => {
-      if (video.duration > 0) bar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+      if (video.duration > 0) {
+        bar.style.width = `${(video.currentTime / video.duration) * 100}%`;
+      }
       this._rafId = requestAnimationFrame(tick);
     };
     this._rafId = requestAnimationFrame(tick);
@@ -526,13 +531,13 @@ class PortfolioVideoController {
     }
   }
 
-  _preloadAdjacent() {
+  _preloadAdjacentSlides() {
     if (!this.swiper) return;
     const active = this.swiper.activeIndex;
     const slides = [...this.container.querySelectorAll('.swiper-slide')];
 
     slides.forEach((slide, i) => {
-      const video = slide.querySelector('.pf-vid-el');
+      const video = slide.querySelector('.pf-video-el');
       if (!video) return;
       video.preload = Math.abs(i - active) <= 1 ? 'metadata' : 'none';
     });
@@ -540,12 +545,14 @@ class PortfolioVideoController {
 
   _initVisibilityObserver() {
     if (!('IntersectionObserver' in window)) return;
+
     this._observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) this._stopPlaying();
       },
       { threshold: 0.1 },
     );
+
     const section = this.container.closest('.pf-video-sec');
     if (section) this._observer.observe(section);
   }
@@ -558,9 +565,88 @@ class PortfolioVideoController {
   }
 }
 
+/* ─────────────────────────────────────────────────────────────────────────
+   PortfolioAdsController
+   Add inside window.onLoaderReady:   new PortfolioAdsController();
+───────────────────────────────────────────────────────────────────────── */
+class PortfolioAdsController {
+  constructor() {
+    this._initSwiper();
+    this._initCounters();
+  }
+
+  _initSwiper() {
+    const isRTL = document.documentElement.dir === 'rtl';
+
+    this.swiper = new Swiper('.pf-ads-swiper', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 20,
+      initialSlide: 2,
+      grabCursor: true,
+      rewind: true,
+      rtl: isRTL,
+      navigation: { prevEl: '.pf-ads-prev', nextEl: '.pf-ads-next' },
+      pagination: { el: '.pf-ads-pagination', clickable: true },
+      a11y: { prevSlideMessage: 'Previous campaign', nextSlideMessage: 'Next campaign' },
+      breakpoints: {
+        0: { spaceBetween: 12 },
+        600: { spaceBetween: 16 },
+        900: { spaceBetween: 22 },
+      },
+    });
+  }
+
+  _initCounters() {
+    const els = document.querySelectorAll('.pf-ads-agg-number[data-count]');
+    if (!els.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          this._runCounter(entry.target);
+          io.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.6 },
+    );
+
+    els.forEach((el) => io.observe(el));
+  }
+
+  _runCounter(el) {
+    const target = parseFloat(el.dataset.count);
+    const prefix = el.dataset.prefix || '';
+    const format = el.dataset.format || 'integer';
+    const duration = 1600;
+    let start = null;
+
+    const ease = (t) => 1 - Math.pow(2, -10 * t);
+
+    const tick = (ts) => {
+      if (!start) start = ts;
+      const elapsed = Math.min(ts - start, duration);
+      const progress = ease(elapsed / duration);
+      const current = progress * target;
+      el.textContent = prefix + this._format(current, format, elapsed >= duration ? target : null);
+      if (elapsed < duration) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  }
+
+  _format(n, fmt, exact) {
+    if (fmt === 'decimal4') return (exact !== null ? exact : n).toFixed(4);
+    return Math.round(exact !== null ? exact : n).toLocaleString('en-US');
+  }
+}
+
 window.onLoaderReady(() => {
   new PortfolioTypewriter();
   new PortfolioScrollIndicator();
   new CardDeck({ deckId: 'pf-gd-deck', prevId: 'pf-gd-prev', nextId: 'pf-gd-next', curId: 'pf-gd-cur', total: 22 });
   new PortfolioVideoController();
+  new CardDeck({ deckId: 'pf-photo-deck', prevId: 'pf-photo-prev', nextId: 'pf-photo-next', total: 13 });
+  new PortfolioAdsController();
 });

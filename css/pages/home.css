@@ -2105,6 +2105,7 @@ html {
   background: transparent;
   transition: transform 0.5s ease;
   will-change: transform;
+  pointer-events: none;
 }
 
 @media (hover: hover) {

@@ -17,6 +17,18 @@
       "description": "Proof that our systems work. Explore case studies of 50+ businesses and restaurants in Egypt that scaled their revenue with Yalla Moment.",
       "ogTitle": "Case Studies | Yalla Moment's Proven Work",
       "ogDescription": "See how we turn high-end design, photography, and digital marketing into actual market authority."
+    },
+    "contact": {
+      "title": "Apply for Partnership | Yalla Moment",
+      "description": "Ready to scale your revenue? Fill out our discovery form to see if Yalla Moment is the right growth partner for your business.",
+      "ogTitle": "Partner With Yalla Moment | Digital Growth Agency",
+      "ogDescription": "Stop losing customers to your competitors. Apply to work with our in-house team of designers, developers, and strategists."
+    },
+    "career": {
+      "title": "Careers | Join Yalla Moment",
+      "description": "We are looking for top-tier designers, marketers, and developers. If you have 2+ years of experience and a killer portfolio, apply to join our in-house team.",
+      "ogTitle": "Careers at Yalla Moment | Build Market Leaders",
+      "ogDescription": "Ready to do the best work of your career? We are hiring proven talent to help us scale businesses across Egypt."
     }
   },
   "nav": {
@@ -30,6 +42,7 @@
     "lang_switch_full": "العربية"
   },
   "footer": {
+    "response_note": "We respond within <strong>24 hours</strong>",
     "tagline": "We craft digital experiences that drive real growth — from strategy to execution.",
     "contact_title": "Contact Us",
     "address": "Abdelsalam Amin St, 6th of October City",
@@ -213,7 +226,7 @@
       "prefix": "Engineered for ",
       "wrong": "likes",
       "right": "REVENUE",
-      "suffix": ".",
+      "suffix": "",
       "scroll": "Scroll"
     },
     "gd": {
@@ -224,8 +237,150 @@
     },
     "video": {
       "eyebrow": "02 — Video Production",
-      "title": "Scroll-Stopping<br /><span>Motion.</span>",
+      "title": "Scroll-Stopping <span class=\"section-title__accent\">Motion.</span>",
       "desc": "Attention is the most expensive currency in business. We produce high-retention video assets engineered to stop the scroll and drive conversions."
+    },
+    "photo": {
+      "eyebrow": "03 — Commercial Photography",
+      "title": "Engineering<br /><span>Desire.</span>",
+      "desc": "Customers buy with their eyes first. We shoot premium commercial photography that highlights the absolute best of your product and triggers immediate sales."
+    },
+    "ads": {
+      "eyebrow": "04 — Meta Ads Results",
+      "title": "Numbers that <span class=\"section-title__accent\">don't lie.</span>",
+      "desc": "Real campaigns. Real budgets. Real results — straight from Meta Ads Manager.",
+      "agg1": "Total Engagements",
+      "agg2": "Avg. Cost / Engagement",
+      "agg3": "Total Ad Spend"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Work With Us",
+      "title": "Ready to scale",
+      "title_accent": "your revenue?",
+      "subtitle": "We act as a strategic growth partner for businesses ready to reach the next level. Fill out the form below to tell us about your goals and bottlenecks, and let's explore how we can multiply your ROI together."
+    },
+    "info": {
+      "address_label": "Office",
+      "address_val": "Abdelsalam Amin St., 6th of October City, Giza",
+      "phone_label": "Direct Line & WhatsApp",
+      "email_label": "Email"
+    },
+    "form": {
+      "labels": {
+        "name": "Full Name",
+        "email": "Work Email",
+        "phone": "Phone / WhatsApp Number",
+        "brand": "Brand / Company Name",
+        "social": "Social Media or Website Link",
+        "service": "What are you looking to scale?",
+        "budget": "Monthly Marketing Budget",
+        "bottleneck": "What is the biggest bottleneck in your business right now?",
+        "brief": "Project Brief"
+      },
+      "placeholders": {
+        "name": "e.g. Ahmed Khaled",
+        "email": "ahmed@yourcompany.com",
+        "phone": "+20 10X XXX XXXX",
+        "brand": "Your Company Name",
+        "social": "instagram.com/yourbrand or yourwebsite.com",
+        "bottleneck": "e.g. We have a great product, but our current ads aren't bringing in qualified leads...",
+        "brief": "Any specific details, deadlines, or deliverables you want to mention?"
+      },
+      "options": {
+        "services": [
+          "Select a service...",
+          "Corporate Identity & Branding",
+          "Website Design & Web Solutions",
+          "Video Production & Motion Graphics",
+          "Social Media Management & Paid Ads",
+          "Full-Service Growth Partnership"
+        ],
+        "budgets": ["Select a budget range...", "Under 20,000 EGP", "20,000 EGP - 50,000 EGP", "50,000 EGP - 150,000 EGP", "150,000+ EGP"]
+      },
+      "submit": "Submit",
+      "submitting": "Sending...",
+      "privacy_note": "Your information is 100% confidential and will never be shared."
+    },
+    "alerts": {
+      "success": {
+        "title": "Application Received",
+        "text": "Thank you for reaching out. Our strategy team will review your business and contact you within 24 hours.",
+        "confirm": "Done"
+      },
+      "error": {
+        "title": "Something went wrong",
+        "text": "We couldn't send your application. Please try again or reach out to us directly via WhatsApp.",
+        "confirm": "Try Again"
+      },
+      "validation": {
+        "title": "Missing Information",
+        "text": "Please fill out all required fields so we can properly evaluate your business needs.",
+        "confirm": "Got it"
+      }
+    }
+  },
+  "career": {
+    "hero": {
+      "eyebrow": "Careers",
+      "title": "Ready for your next",
+      "title_accent": "big step?",
+      "subtitle": "We are looking for passionate, experienced creatives and strategists to join our in-house team. If you care deeply about your craft and want to build campaigns that drive real business growth, we would love to meet you."
+    },
+    "info": {
+      "address_label": "Office Location",
+      "address_val": "Abdelsalam Amin St., 6th of October City, Giza",
+      "warning_title": "Strict Hiring Policy",
+      "warning_desc": "Please respect our time. Do not apply if you do not meet the minimum age (20+) and experience (2+ years) requirements. Applications without a portfolio will be automatically rejected.",
+      "requirements_label": "Requirements",
+      "requirements_val": "20+ years old & 2+ years professional experience",
+      "portfolio_label": "Portfolio",
+      "portfolio_val": "Required — applications without one are auto-rejected",
+      "review_note": "Applications reviewed within <strong>3 business days</strong>"
+    },
+    "form": {
+      "labels": {
+        "name": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone / WhatsApp Number",
+        "job_title": "What role are you applying for?",
+        "portfolio": "Portfolio or GitHub Link (Crucial)",
+        "cv": "Upload your CV (PDF only)",
+        "why_us": "Why Yalla Moment? (Briefly)",
+        "agreement": "I confirm that I am at least 20 years old and have a minimum of 2 years of professional agency/freelance experience."
+      },
+      "placeholders": {
+        "name": "e.g. Ahmed Khaled",
+        "email": "ahmed@gmail.com",
+        "phone": "+20 10X XXX XXXX",
+        "job_title": "e.g. Senior Media Buyer, UI/UX Designer...",
+        "portfolio": "behance.net/yourname or yourwebsite.com",
+        "why_us": "Tell us what you can bring to the team..."
+      },
+      "upload_btn": "Choose File",
+      "upload_browse": "Browse",
+      "upload_hint": "Max file size: 5MB — PDF only",
+      "privacy_note": "Your information is 100% confidential and will never be shared.",
+      "submit": "Submit Application",
+      "submitting": "Sending..."
+    },
+    "alerts": {
+      "success": {
+        "title": "Application Received",
+        "text": "Your CV and portfolio are in our system. If your work matches our standard, we will contact you for an interview.",
+        "confirm": "Done"
+      },
+      "error": {
+        "title": "Upload Failed",
+        "text": "There was an issue sending your application. Please try again or ensure your CV is under 5MB.",
+        "confirm": "Try Again"
+      },
+      "validation": {
+        "title": "Missing Information",
+        "text": "You must fill out all fields, attach your CV, and check the experience confirmation box to apply.",
+        "confirm": "Got it"
+      }
     }
   },
   "cta": {
