@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  fetch('https://gist.githubusercontent.com/im-eslam/dffd5d7037c9be7656df98f610274226/raw/site-config.json?_t=' + Date.now(), { cache: 'no-store', mode: 'cors' })
+  fetch('https://gist.githubusercontent.com/im-eslam/dffd5d7037c9be7656df98f610274226/raw/site-config.json?_t=' + Date.now())
     .then(function (r) {
       return r.json();
     })
