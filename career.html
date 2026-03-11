@@ -226,6 +226,8 @@
         text-align: right;
       }
     </style>
+
+    <script src="js/main.js"></script>
   </head>
 
   <body data-page="career">
@@ -502,6 +504,23 @@
 
               <!-- Row 5: Why Yalla Moment -->
               <div class="form-row form-row--full">
+                <div class="form-field">
+                  <label class="form-label" for="cf-salary">
+                    <span data-lang-key="career.form.labels.salary">Expected Monthly Salary (EGP)</span>
+                    <span class="form-required" aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="cf-salary"
+                    name="salary"
+                    class="form-input js-lang-attrs"
+                    required
+                    inputmode="numeric"
+                    data-lang-key-attr-placeholder="career.form.placeholders.salary"
+                    placeholder="e.g. 15,000 EGP"
+                  />
+                </div>
+
                 <div class="form-field">
                   <label class="form-label" for="cf-why-us">
                     <span data-lang-key="career.form.labels.why_us">Why Yalla Moment? (Briefly)</span>

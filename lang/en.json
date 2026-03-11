@@ -348,6 +348,7 @@
         "portfolio": "Portfolio or GitHub Link (Crucial)",
         "cv": "Upload your CV (PDF only)",
         "why_us": "Why Yalla Moment? (Briefly)",
+        "salary": "Expected Monthly Salary (EGP)",
         "agreement": "I confirm that I am at least 20 years old and have a minimum of 2 years of professional agency/freelance experience."
       },
       "placeholders": {
@@ -356,7 +357,8 @@
         "phone": "+20 10X XXX XXXX",
         "job_title": "e.g. Senior Media Buyer, UI/UX Designer...",
         "portfolio": "behance.net/yourname or yourwebsite.com",
-        "why_us": "Tell us what you can bring to the team..."
+        "why_us": "Tell us what you can bring to the team...",
+        "salary": "e.g. 15,000 EGP"
       },
       "upload_btn": "Choose File",
       "upload_browse": "Browse",

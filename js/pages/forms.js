@@ -1,9 +1,6 @@
 (function () {
   'use strict';
 
-  /* ═══════════════════════════════════════════════
-     CONFIG
-  ═══════════════════════════════════════════════ */
   const EMAILJS_CONFIG = {
     PUBLIC_KEY: '8KtmAGdp76K5hvf9t',
     SERVICE_ID: 'service_rpcpv1k',
@@ -302,6 +299,7 @@
       const jobTitle = document.getElementById('cf-job-title')?.value.trim();
       const portfolio = document.getElementById('cf-portfolio')?.value.trim();
       // const cvFile = document.getElementById('cf-cv')?.files[0] ?? null;  // CV upload disabled
+      const salary = document.getElementById('cf-salary')?.value.trim();
       const whyUs = document.getElementById('cf-why-us')?.value.trim();
       const agreement = document.getElementById('cf-agreement')?.checked ?? false;
 
@@ -319,6 +317,7 @@
       check('cf-phone', !!phone);
       check('cf-job-title', !!jobTitle);
       check('cf-portfolio', !!portfolio);
+      check('cf-salary', !!salary);
       check('cf-why-us', !!whyUs);
 
       // CV validation disabled — re-enable when EmailJS Pro attachment is ready
@@ -374,6 +373,7 @@
             job_title: jobTitle,
             portfolio,
             cv_name: '—', // placeholder until CV upload is re-enabled
+            salary,
             why_us: whyUs,
             reply_to: email,
           },
